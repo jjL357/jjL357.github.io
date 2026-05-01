@@ -3,190 +3,331 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Junjie Liu</title>
+  <title>Junjie Liu - Sun Yat-sen University</title>
   <meta name="author" content="Junjie Liu">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/avatar.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  
+  <!-- 引入现代化的 Google 字体 Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 全局样式 */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333333;
+      background-color: #f7f9fb; /* 极浅的灰蓝色背景 */
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    /* 居中容器与卡片效果 */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+    }
+
+    /* 链接样式 */
+    a {
+      color: #1a73e8; /* 经典的学术蓝 */
+      text-decoration: none;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    a:hover {
+      color: #d93025;
+      text-decoration: underline;
+    }
+
+    /* 标题样式 */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #222222;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 10px;
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
+
+    /* 个人简介部分 */
+    .name {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #111111;
+      margin: 0 0 15px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .social-links {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .social-links a {
+      margin: 0 5px;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    .social-links a:hover {
+      background-color: #f1f3f4;
+      text-decoration: none;
+    }
+
+    /* 头像样式 */
+    .profile-photo {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.03);
+    }
+
+    /* 列表样式 */
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* 布局表格复用样式 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    /* 经历与教育的 Logo 列 */
+    .logo-col {
+      width: 18%;
+      padding: 15px 20px 15px 0;
+      text-align: center;
+    }
+
+    .logo-col img {
+      max-width: 80px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+
+    .text-col {
+      width: 82%;
+      padding: 15px 0;
+    }
+
+    /* 论文排版定制样式 */
+    .pub-img-col {
+      width: 32%; /* 给横向长图分配足够的空间 */
+      padding: 15px 25px 15px 0;
+      vertical-align: middle;
+    }
+
+    .pub-img-col img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* 保证超宽图片按原比例完整显示，不拉伸 */
+      border-radius: 6px;
+      border: 1px solid #eeeeee; /* 轻微描边，增加质感 */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .pub-text-col {
+      width: 68%;
+      padding: 15px 0;
+      vertical-align: middle;
+    }
+
+    .paper-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #111111;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .paper-authors {
+      display: block;
+      color: #444444;
+      margin-bottom: 4px;
+    }
+
+    .paper-conf {
+      display: block;
+      font-style: italic;
+      color: #1a73e8;
+    }
+
+    @media (max-width: 600px) {
+      /* 在小屏幕手机上，将图片和文字改成上下排版，防止图片太小 */
+      .pub-img-col, .pub-text-col {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
+  <div class="container">
+    
+    <!-- Header Section -->
+    <table>
       <tr>
-        <td>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <p class="name" style="text-align: center;">Junjie Liu</p>
-                  <p>
-                    I'm a master student at <a href="https://cse.sysu.edu.cn/">Department of Computer Science and Engineering, Sun Yat-sen University</a>, advised by <a href="https://sites.google.com/view/xcsysu/">Prof. Xu Chen</a>. 
-                    Before that, I received my Bachelor’s degree from <a href="https://cse.sysu.edu.cn/">Sun Yat-sen University</a>.
-                    </p>
-                    <p>
-                    I was very fortunate to be advised by <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a> during my internship at <a href="https://www.hkpeilab.com/">PEILab</a>, The Hong Kong University of Science and Technology.
-                    </p>
-
-                    <p>
-                    My research interests lie in <b>efficient AI</b> and <b>machine learning systems</b>.
-                    </p>
-
-                  <p style="text-align:center">
-                    <a href="https://leetcode.cn/u/jjl357/">LeetCode</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/jjL357">Github</a> &nbsp;/&nbsp;
-                    <a href="https://jjl357.github.io/blog/">Blog</a> &nbsp;/&nbsp;
-                    <a href="mailto:liujj255@mail2.sysu.edu.cn">Email</a>
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
-                  <a href="images/avatar.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/avatar.png"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Education</h2>
-                <table width="90%" align="center" border="0" cellpadding="20">
-                  <tbody>
-                    <tr>
-                      <td style="padding:20px;width:25%;vertical-align:middle">
-                        <img src="images/sysu.svg" width="100%">
-                      </td>
-                      <td width="100%" valign="center">
-                        <b>Sun Yat-sen University</b><br> 
-                        2025.09 - Present<br>
-                        <b>M.S. in Computer Science and Engineering</b><br>
-                        Advisor: <a href="https://sites.google.com/view/xcsysu/">Prof. Xu Chen</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="padding:20px;width:25%;vertical-align:middle">
-                        <img src="images/hkust.jfif" width="100%">
-                      </td>
-                      <td width="100%" valign="center">
-                        <b>The Hong Kong University of Science and Technology</b><br> 
-                        2025.02 - 2025.08<br>
-                        <b>Visiting Student in Computer Science and Engineering</b><br>
-                        Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="padding:20px;width:25%;vertical-align:middle">
-                        <img src="images/sysu.svg" width="100%">
-                      </td>
-                      <td width="100%" valign="center">
-                        <b>Sun Yat-sen University</b><br> 
-                        2021.09 - 2025.06 <br>
-                        <b>B.E. in Computer Science and Engineering</b><br>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Publications</h2>
-                <table width="90%" align="center" border="0" cellpadding="20">
-                  <tbody>
-                    <tr>
-                      <td width="100%" valign="center">
-                        <li>Papers or submissions will be updated soon.</li>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Internships</h2>
-                <table width="90%" align="center" border="0" cellpadding="20">
-                  <tbody>
-                    <tr>
-                      <td style="padding:20px;width:25%;vertical-align:middle">
-                        <img src="images/hkust.jfif" width="100%">
-                      </td>
-                      <td width="75%" valign="center">
-                        <b><a href="https://www.hkpeilab.com/">PEILab</a> @ HKUST</b><br>
-                        2025.02 - 2025.08<br>
-                        <b>Research Assistant</b><br>
-                        Research on (multimodal) large language models inference acceleration<br>
-                        Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
-                      </td>
-                    </tr>
-                    <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                      <img src="images/huawei.svg" style="width:90%;display:block;margin:auto;">
-                    </td>
-                    <td width="75%" valign="center">
-                      <b>Huawei</b><br>
-                      2024.07 - 2024.09<br>
-                      <b>Research Intern</b><br>
-                      Research on large language models for log anomaly detection
-                    </td>
-                  </tr>
-
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-                <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>Honors &amp; Awards</h2>
-                    <ul>
-                    <li>First-Prize SYSU Postgraduate Scholarship, 2025</li>
-                    <li>SYSU Undergraduate Scholarship, 2022, 2023, 2024</li>
-                    <li>Third Prize, International Competition of Autonomous Walking Intelligent Robots, RUNNING ROBOT, 2023</li>
-                    </ul>
-                </td>
-                </tr>
-            </tbody>
-            </table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Misc</h2>
-                  <ul>
-                    <ul>
-                    <li>Enjoy music 🎵, movies 🎬, basketball 🏀, running 🏃‍♂️.</li>
-                    <li>During my time at <a href="https://www.hkpeilab.com/">PEILab</a>, I was very fortunate to work with Haodong Wang and <a href="https://zicongs-homepage.webflow.io/">Zicong Hong</a>. I am very grateful for their guidance and support.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p style="text-align:center;font-size:0.8em;">
-            the source code is stolen from <a href="https://jonbarron.info/">Jon Barron</a>. Thanks for his sharing! 🙏🏻
+        <td style="width:65%; padding-right: 5%;">
+          <h1 class="name">Junjie Liu</h1>
+          <p>
+            I'm a master student at <a href="https://cse.sysu.edu.cn/">Department of Computer Science and Engineering, Sun Yat-sen University</a>, advised by <a href="https://sites.google.com/view/xcsysu/">Prof. Xu Chen</a>. 
+            Before that, I received my Bachelor’s degree from <a href="https://cse.sysu.edu.cn/">Sun Yat-sen University</a>.
           </p>
-
+          <p>
+            I was fortunate to be advised by <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a> during my internship at <a href="https://www.hkpeilab.com/">PEILab</a>, The Hong Kong University of Science and Technology.
+          </p>
+          <p>
+            My research interests lie in <b>efficient AI</b> and <b>machine learning systems</b>.
+          </p>
+          
+          <div class="social-links">
+            <a href="https://leetcode.cn/u/jjl357/" target="_blank">LeetCode</a> / 
+            <a href="https://github.com/jjL357" target="_blank">Github</a> / 
+            <a href="https://openreview.net/profile?id=%7EJunjie_Liu13" target="_blank">OpenReview</a> / 
+            <a href="mailto:liujj255@mail2.sysu.edu.cn">Email</a> / 
+            <a href="https://jjl357.github.io/blog/" target="_blank">Blog</a>
+          </div>
+        </td>
+        <td style="width:35%; text-align: center;">
+          <a href="images/avatar.png">
+            <img class="profile-photo" alt="profile photo" src="images/avatar.png">
+          </a>
         </td>
       </tr>
-    </tbody>
-  </table>
+    </table>
+
+    <!-- News Section -->
+    <h2>News</h2>
+    <ul>
+      <li><strong>[2026.05]</strong> <b>TwinQuant</b> is accepted by <b>ICML 2026</b> 🎉</li>
+    </ul>
+
+    <!-- Education Section -->
+    <h2>Education</h2>
+    <table>
+      <tr>
+        <td class="logo-col"><img src="images/sysu.svg" alt="SYSU Logo"></td>
+        <td class="text-col">
+          <b>Sun Yat-sen University</b><br> 
+          2025.09 - Present<br>
+          <b>M.S. in Computer Science and Engineering</b><br>
+          Advisor: <a href="https://sites.google.com/view/xcsysu/">Prof. Xu Chen</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="logo-col"><img src="images/hkust.jfif" alt="HKUST Logo"></td>
+        <td class="text-col">
+          <b>The Hong Kong University of Science and Technology</b><br> 
+          2025.02 - 2025.08<br>
+          <b>Visiting Student in Computer Science and Engineering</b><br>
+          Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="logo-col"><img src="images/sysu.svg" alt="SYSU Logo"></td>
+        <td class="text-col">
+          <b>Sun Yat-sen University</b><br> 
+          2021.09 - 2025.06 <br>
+          <b>B.E. in Computer Science and Engineering</b>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Publications Section -->
+    <h2>Publications</h2>
+    <table>
+      <tr>
+        <!-- 论文图片区域 -->
+        <td class="pub-img-col">
+          <!-- 请将 src 替换为你实际的图片路径和名称，例如 images/twinquant.png -->
+          <img src="images/TwinQuant.jpg" alt="TwinQuant Teaser Figure">
+        </td>
+        <!-- 论文文字区域 -->
+        <td class="pub-text-col">
+          <span class="paper-title">TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization</span>
+          <span class="paper-authors">Haodong Wang, <strong>Junjie Liu</strong>, Zicong Hong, Qianli Liu, Jian Lin, Song Guo, Xu Chen</span>
+          <span class="paper-conf">International Conference on Machine Learning (<strong>ICML</strong>), 2026</span>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Internships Section -->
+    <h2>Internships</h2>
+    <table>
+      <tr>
+        <td class="logo-col"><img src="images/hkust.jfif" alt="PEILab HKUST Logo"></td>
+        <td class="text-col">
+          <b><a href="https://www.hkpeilab.com/">PEILab</a> @ HKUST</b><br>
+          2025.02 - 2025.08<br>
+          <b>Research Assistant</b><br>
+          Research on (multimodal) large language models inference acceleration<br>
+          Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="logo-col"><img src="images/huawei.svg" alt="Huawei Logo"></td>
+        <td class="text-col">
+          <b>Huawei</b><br>
+          2024.07 - 2024.09<br>
+          <b>Research Intern</b><br>
+          Research on large language models for log anomaly detection
+        </td>
+      </tr>
+    </table>
+
+    <!-- Honors & Awards Section -->
+    <h2>Honors &amp; Awards</h2>
+    <ul>
+      <li>First-Prize SYSU Postgraduate Scholarship, 2025</li>
+      <li>SYSU Undergraduate Scholarship, 2022, 2023, 2024</li>
+      <li>Third Prize, International Competition of Autonomous Walking Intelligent Robots, RUNNING ROBOT, 2023</li>
+    </ul>
+
+    <!-- Misc Section -->
+    <h2>Misc</h2>
+    <ul>
+      <li>Enjoy music 🎵, movies 🎬, basketball 🏀, running 🏃‍♂️.</li>
+      <li>During my time at <a href="https://www.hkpeilab.com/">PEILab</a>, I was very fortunate to work with Haodong Wang and <a href="https://zicongs-homepage.webflow.io/">Zicong Hong</a>. I am very grateful for their guidance and support.</li>
+    </ul>
+
+  </div>
 </body>
 
 </html>
