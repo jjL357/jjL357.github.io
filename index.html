@@ -8,10 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/avatar.png" type="image/x-icon">
   
-  <!-- 引入现代化的 Google 字体 Inter -->
+  <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icon fonts: Font Awesome + Academicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
   <style>
     /* 全局样式 */
@@ -20,7 +24,7 @@
       font-size: 16px;
       line-height: 1.7;
       color: #333333;
-      background-color: #f7f9fb; /* 极浅的灰蓝色背景 */
+      background-color: #f7f9fb;
       margin: 0;
       padding: 40px 20px;
     }
@@ -43,7 +47,7 @@
 
     /* 链接样式 */
     a {
-      color: #1a73e8; /* 经典的学术蓝 */
+      color: #1a73e8;
       text-decoration: none;
       transition: color 0.2s ease, text-decoration 0.2s ease;
     }
@@ -73,22 +77,41 @@
       letter-spacing: -0.5px;
     }
 
+    /* 社交链接：icon + text 样式 */
     .social-links {
       margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
       font-size: 0.95rem;
       font-weight: 500;
-      white-space: nowrap; /* 强制不换行 */
     }
 
     .social-links a {
-      margin: 0 2px;     /* 稍微减小间距，防止不换行时超出边界 */
-      padding: 5px 6px;  /* 稍微减小内边距 */
-      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #003b6f;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-links a i {
+      font-size: 1.05rem;
+      color: #003b6f;
+      transition: color 0.2s ease;
     }
 
     .social-links a:hover {
-      background-color: #f1f3f4;
+      color: #d93025;
       text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .social-links a:hover i {
+      color: #d93025;
     }
 
     /* 头像样式 */
@@ -148,7 +171,7 @@
 
     /* 论文排版定制样式 */
     .pub-img-col {
-      width: 32%; /* 给横向长图分配足够的空间 */
+      width: 32%;
       padding: 15px 25px 15px 0;
       vertical-align: middle;
     }
@@ -156,10 +179,10 @@
     .pub-img-col img {
       width: 100%;
       height: auto;
-      object-fit: contain; /* 保证超宽图片按原比例完整显示，不拉伸 */
+      object-fit: contain;
       border-radius: 6px;
-      border: 1px solid #eeeeee; /* 轻微描边，增加质感 */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #eeeeee;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     }
 
     .pub-text-col {
@@ -189,16 +212,20 @@
     }
 
     @media (max-width: 600px) {
-      /* 在小屏幕手机上，将图片和文字改成上下排版，防止图片太小 */
-      .pub-img-col, .pub-text-col {
+      .pub-img-col,
+      .pub-text-col {
         display: block;
         width: 100%;
         padding: 5px 0;
       }
-      
-      /* 手机端屏幕较窄，允许换行体验更好 */
+
       .social-links {
-        white-space: normal; 
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .social-links a i {
+        font-size: 1rem;
       }
     }
   </style>
@@ -224,14 +251,38 @@
           </p>
           
           <div class="social-links">
-            <a href="https://leetcode.cn/u/jjl357/" target="_blank">LeetCode</a> / 
-            <a href="https://github.com/jjL357" target="_blank">Github</a> / 
-            <a href="https://openreview.net/profile?id=%7EJunjie_Liu13" target="_blank">OpenReview</a> / 
-            <a href="https://scholar.google.com/citations?hl=en&user=G-i1MJgAAAAJ" target="_blank">Google Scholar</a> / 
-            <a href="mailto:liujj255@mail2.sysu.edu.cn">Email</a> / 
-            <a href="https://jjl357.github.io/blog/" target="_blank">Blog</a>
+            <a href="mailto:liujj255@mail2.sysu.edu.cn" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </a>
+
+            <a href="https://scholar.google.com/citations?hl=en&user=G-i1MJgAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+              <span>Google Scholar</span>
+            </a>
+
+            <a href="https://leetcode.cn/u/jjl357/" target="_blank" rel="noopener noreferrer" title="LeetCode">
+              <i class="fa-solid fa-code"></i>
+              <span>LeetCode</span>
+            </a>
+
+            <a href="https://github.com/jjL357" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://openreview.net/profile?id=%7EJunjie_Liu13" target="_blank" rel="noopener noreferrer" title="OpenReview">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>OpenReview</span>
+            </a>
+
+            <a href="https://jjl357.github.io/blog/" target="_blank" rel="noopener noreferrer" title="Blog">
+              <i class="fa-solid fa-blog"></i>
+              <span>Blog</span>
+            </a>
           </div>
         </td>
+
         <td style="width:35%; text-align: center;">
           <a href="images/avatar.png">
             <img class="profile-photo" alt="profile photo" src="images/avatar.png">
@@ -243,6 +294,7 @@
     <!-- News Section -->
     <h2>News</h2>
     <ul>
+      <li><strong>[2026.08]</strong> <b>PACE</b> is accepted to <b>Findings of EMNLP 2026</b> 🎉</li>
       <li><strong>[2026.05]</strong> <b>TwinQuant</b> is accepted by <b>ICML 2026</b> 🎉</li>
     </ul>
 
@@ -250,7 +302,9 @@
     <h2>Education</h2>
     <table>
       <tr>
-        <td class="logo-col"><img src="images/sysu.svg" alt="SYSU Logo"></td>
+        <td class="logo-col">
+          <img src="images/sysu.svg" alt="SYSU Logo">
+        </td>
         <td class="text-col">
           <b>Sun Yat-sen University</b><br> 
           2025.09 - Present<br>
@@ -258,8 +312,11 @@
           Advisor: <a href="https://sites.google.com/view/xcsysu/">Prof. Xu Chen</a>
         </td>
       </tr>
+
       <tr>
-        <td class="logo-col"><img src="images/hkust.jfif" alt="HKUST Logo"></td>
+        <td class="logo-col">
+          <img src="images/hkust.jfif" alt="HKUST Logo">
+        </td>
         <td class="text-col">
           <b>The Hong Kong University of Science and Technology</b><br> 
           2025.02 - 2025.08<br>
@@ -267,8 +324,11 @@
           Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
         </td>
       </tr>
+
       <tr>
-        <td class="logo-col"><img src="images/sysu.svg" alt="SYSU Logo"></td>
+        <td class="logo-col">
+          <img src="images/sysu.svg" alt="SYSU Logo">
+        </td>
         <td class="text-col">
           <b>Sun Yat-sen University</b><br> 
           2021.09 - 2025.06 <br>
@@ -281,12 +341,22 @@
     <h2>Publications</h2>
     <table>
       <tr>
-        <!-- 论文图片区域 -->
         <td class="pub-img-col">
-          <!-- 请将 src 替换为你实际的图片路径和名称，例如 images/twinquant.png -->
+          <img src="images/PACE_overview.png" alt="Overview of the PACE framework">
+        </td>
+
+        <td class="pub-text-col">
+          <span class="paper-title">PACE: A Unified Condense-and-Extract Paradigm for Fast VLM Inference</span>
+          <span class="paper-authors"><strong>Junjie Liu</strong>, Shengyuan Ye, Xu Chen</span>
+          <span class="paper-conf">Findings of the Association for Computational Linguistics: <strong>EMNLP 2026</strong></span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="pub-img-col">
           <img src="images/TwinQuant.jpg" alt="TwinQuant Teaser Figure">
         </td>
-        <!-- 论文文字区域 -->
+
         <td class="pub-text-col">
           <span class="paper-title">TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization</span>
           <span class="paper-authors">Haodong Wang, <strong>Junjie Liu</strong>, Zicong Hong, Qianli Liu, Jian Lin, Song Guo, Xu Chen</span>
@@ -299,7 +369,9 @@
     <h2>Internships</h2>
     <table>
       <tr>
-        <td class="logo-col"><img src="images/hkust.jfif" alt="PEILab HKUST Logo"></td>
+        <td class="logo-col">
+          <img src="images/hkust.jfif" alt="PEILab HKUST Logo">
+        </td>
         <td class="text-col">
           <b><a href="https://www.hkpeilab.com/">PEILab</a> @ HKUST</b><br>
           2025.02 - 2025.08<br>
@@ -308,8 +380,11 @@
           Advisor: <a href="https://cse.hkust.edu.hk/~songguo/">Prof. Song Guo</a>
         </td>
       </tr>
+
       <tr>
-        <td class="logo-col"><img src="images/huawei.svg" alt="Huawei Logo"></td>
+        <td class="logo-col">
+          <img src="images/huawei.svg" alt="Huawei Logo">
+        </td>
         <td class="text-col">
           <b>Huawei</b><br>
           2024.07 - 2024.09<br>
